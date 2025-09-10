@@ -1,0 +1,207 @@
+/* colors and fonts */
+
+
+body {
+   background-color: rgb(241, 240, 240);
+    color: #646464;
+   font-family : 'Lora', serif;
+   font-size : 1rem;
+   font-weight: lighter;
+   font-weight: 300;
+   line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'league spartan', sans serif;
+    font-weight: 700;
+    color: #0f0063;
+    letter-spacing: -0.5px;
+}
+
+h1 {
+  text-align: center;   
+  margin-bottom: 1,2rem;        
+}
+
+h1 span {
+  display: inline-block;     
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #0f0063;
+  animation: typing 3s steps(30, end) forwards, 
+             blink 0.6s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from { max-width: 0; }
+  to   { max-width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50%      { border-color: #0f0063; }
+}
+
+h2{
+    color: #0f0063;
+    font-size: 24px;
+    font-weight: lighter;
+    font-weight: 500;
+}
+
+a {
+    color: #2277f8;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Roboto', sans serif;
+}
+
+a:hover {
+    color:black;
+}
+
+/* Class, container and more */
+.container {
+    width: 700px;
+    margin: 40px auto;
+}
+
+.card-profile{
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin: 20px 0px;
+    text-align: center
+}
+
+.card-profile:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0px 15px 40px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.img-circle{
+    border-radius: 50%;
+}
+
+.btn-blue{
+    background-color: #2277f8;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: "League spartan";
+}
+
+.btn-blue:hover {
+background-color: black;
+color: white;
+transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.list-inline {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.list-inline li {
+    display: inline;
+padding: 10px;
+}
+
+.list-inline i {
+    font-size: 50px;
+    color:rgb(230,230,230);
+}
+
+.list-inline i:hover {
+    font-size: 50px;
+    color:#2277f8
+}
+
+#first-card p {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 760px) {
+    .container {
+        width: 600px;}
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 600px;
+    }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveGrid 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveGrid {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-40px, -40px); }
+}
+
+body::after {
+    content: "🦄";  /* la licorne remplace le point noir */
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 40px;   /* taille de la licorne */
+    z-index: -1; 
+    animation: bounceX 6s linear infinite alternate,
+               bounceY 4s linear infinite alternate;
+}
+
+@keyframes bounceX {
+    0%   { left: 0; }
+    100% { left: calc(100% - 20px); }
+}
+
+@keyframes bounceY {
+    0%   { top: 0; }
+    100% { top: calc(100% - 20px); }
+}
+
+.card-profile {
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin: 20px 0px;
+    text-align: center;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: slideInTop 0.8s ease forwards;
+}
+
+.card-profile:nth-child(1) { animation-delay: 0.2s; }
+.card-profile:nth-child(2) { animation-delay: 0.4s; }
+.card-profile:nth-child(3) { animation-delay: 0.6s; }
+.card-profile:nth-child(4) { animation-delay: 0.8s; }
+.card-profile:nth-child(5) { animation-delay: 1s; }
+
+@keyframes slideInTop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
